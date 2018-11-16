@@ -49,11 +49,16 @@ _CommentEnd_
 ####+BEGIN: bx:dblock:ploneProc:bash:nodesList :types ""
 # {{{ DBLOCK-nodesList
 nodesList="
+blee-pip
 blee
+unisos-pip
+.git
+roPerf-pip
+ByStar
 unisos
-fptb
-bsif
+bxGenesis
 bisos
+bisos-pip
 "
 # }}} DBLOCK-nodesList
 ####+END:
