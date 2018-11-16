@@ -50,18 +50,13 @@ _CommentEnd_
 # For now ftoWalk is restricted to
 #
 
-####+BEGIN: bx:dblock:ploneProc:bash:nodesList :types ""
+####+BEGINNOT: bx:dblock:ploneProc:bash:nodesList :types ""
 # {{{ DBLOCK-nodesList
 nodesList="
 blee-pip
+unisos-pip
 roPerf-pip
 bisos-pip
-ByStar
-bxGenesis
-bisos
-unisos-pip
-blee
-unisos
 "
 # }}} DBLOCK-nodesList
 ####+END:
