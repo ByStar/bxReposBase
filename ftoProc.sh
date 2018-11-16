@@ -46,18 +46,16 @@ _CommentBegin_
 *  [[elisp:(org-cycle)][| ]]  [[elisp:(blee:ppmm:org-mode-toggle)][Nat]] [[elisp:(beginning-of-buffer)][Top]] [[elisp:(delete-other-windows)][(1)]] || List       ::  Nodes List    [[elisp:(org-cycle)][| ]]
 _CommentEnd_
 
-####+BEGIN: bx:dblock:ploneProc:bash:nodesList :types ""
+#
+# For now ftoWalk is restricted to
+#
+
+####+BEGINNOT: bx:dblock:ploneProc:bash:nodesList :types ""
 # {{{ DBLOCK-nodesList
 nodesList="
 blee-pip
-blee
 unisos-pip
-.git
 roPerf-pip
-ByStar
-unisos
-bxGenesis
-bisos
 bisos-pip
 "
 # }}} DBLOCK-nodesList
@@ -88,7 +86,7 @@ ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i pkgUnInstall sys
 $( examplesSeperatorChapter "PyPi AuxNode ftpWalks" )
 ftoProc.sh -v -n showRun -i treeRecurse runFunc pypiProc.sh -i distClean
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i distClean
-ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i pkgInstall edit /bystar/dist/venv/dev-py2-bisos-3
+ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i pkgInstall edit /bisos/venv/dev-py2-bisos-3
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i pkgInstall edit sys
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd icmPlayer.sh -i clean ftoProc.sh pypiProc.sh
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd icmPlayer.sh -i pkgedPrep ftoProc.sh pypiProc.sh
