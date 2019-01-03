@@ -53,18 +53,20 @@ _CommentEnd_
 ####+BEGIN: bx:dblock:ploneProc:bash:nodesList :types ""
 # {{{ DBLOCK-nodesList
 nodesList="
+efficientProtocols
+overview
 blee-pip
+blee
+unisos-pip
 roPerf-pip
-bisos-pip
 ByStar
+unisos
+mohsenBanan
 bxGenesis
 bisos
-efficientProtocols
-mohsenBanan
-base
-unisos-pip
-blee
-unisos
+bxReposBase
+bisos-pip
+vagrants
 "
 # }}} DBLOCK-nodesList
 ####+END:
