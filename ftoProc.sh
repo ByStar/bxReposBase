@@ -16,7 +16,7 @@ SEED="
 *  /[dblock]/ /Seed/ :: [[file:/bisos/core/bsip/bin/seedFtoCommon.sh]] | 
 "
 FILE="
-*  /This File/ :: /bisos/git/auth/bxRepos/ftoProc.sh 
+*  /This File/ :: /bisos/git/bxRepos/ftoProc.sh 
 "
 if [ "${loadFiles}" == "" ] ; then
     /bisos/core/bsip/bin/seedFtoCommon.sh -l $0 "$@" 
@@ -57,20 +57,21 @@ _CommentEnd_
 ####+BEGIN: bx:dblock:ploneProc:bash:nodesList :types ""
 # {{{ DBLOCK-nodesList
 nodesList="
-bisos
-bxGenesis
-bxlcnt
-efficientProtocols
 blee
-bxexamples
-unisos-pip
+efficientProtocols
 blee-pip
-unisos
 ByStar
-blee-binders
-mohsenBanan
-roPerf-pip
+bxObjects
 bisos-pip
+unisos
+blee-binders
+bxlcnt
+roPerf-pip
+bxGenesis
+bisos
+bxexamples
+mohsenBanan
+unisos-pip
 "
 # }}} DBLOCK-nodesList
 ####+END:
@@ -94,6 +95,9 @@ _EOF_
 
 
 function pypiFtpWalks {
+    local pypiProcStartTemplate="/bisos/apps/defaults/software/starts/pypiProc.sh"
+    local ftoProcNodeStartTemplate="/bisos/apps/defaults/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh"
+    
     cat  << _EOF_
 $( examplesSeperatorChapter "ftpWalks: Uninstall" )
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i pkgUnInstall sys
@@ -105,23 +109,26 @@ ftoProc.sh -v -n showRun -i ftoWalkRunCmnd pypiProc.sh -i pkgInstall edit sys
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd icmPlayer.sh -i clean ftoProc.sh pypiProc.sh
 ftoProc.sh -v -n showRun -i ftoWalkRunCmnd icmPlayer.sh -i pkgedPrep ftoProc.sh pypiProc.sh
 $( examplesSeperatorChapter "Under Files Update" )
-ftoProc.sh -v -n showRun -i updateUnderFilesTo  /libre/ByStar/InitialTemplates/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh ftoProc.sh
-ftoProc.sh -v -n showRun -i updateUnderFilesTo /libre/ByStar/InitialTemplates/software/starts/pypiProc.sh pypiProc.sh 
+ftoProc.sh -v -n showRun -i updateUnderFilesTo  ${ftoProcNodeStartTemplate} ftoProc.sh
+ftoProc.sh -v -n showRun -i updateUnderFilesTo  ${pypiProcStartTemplate} pypiProc.sh 
 _EOF_
  return
 }
 
 
 function templatesEvolution {
+    local ftoProcNodeStartTemplate="/bisos/apps/defaults/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh"
+    local panelStartTemplate="/bisos/apps/defaults/update/fto/start/commonProc/anyFtoItem/mainPanel.org"
+    
     cat  << _EOF_
 $( examplesSeperatorSection "ftoProc.sh -- Templates Evolution" )
-diff ./ftoProc.sh  /libre/ByStar/InitialTemplates/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh
-cp ./ftoProc.sh  /libre/ByStar/InitialTemplates/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh
-cp /libre/ByStar/InitialTemplates/update/fto/start/commonProc/anyFtoItem/ftoProcNode.sh ./ftoProc.sh  
+diff ./ftoProc.sh ${ftoProcNodeStartTemplate}
+cp ./ftoProc.sh ${ftoProcNodeStartTemplate}
+cp ${ftoProcNodeStartTemplate} ./ftoProc.sh  
 $( examplesSeperatorSection "commonPanel.org -- Templates Evolution" )
-diff ./Panel.org  /libre/ByStar/InitialTemplates/start/fto/commonProc/anyFtoItem/mainPanel.org
-cp ./Panel.org /libre/ByStar/InitialTemplates/start/fto/commonProc/anyFtoItem/mainPanel.org
-cp /libre/ByStar/InitialTemplates/start/fto/commonProc/anyFtoItem/mainPanel.org ./Panel.org
+diff ./Panel.org  ${panelStartTemplate}
+cp ./Panel.org ${panelStartTemplate}
+cp ${panelStartTemplate} ./Panel.org
 _EOF_
  return
 }
